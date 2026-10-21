@@ -1,0 +1,32 @@
+# Tarea 13 - Gestion de autos (extension "REST Client" de VS Code)
+@base = http://localhost:8094/api
+
+### Estado de la API
+GET {{base}}/estado
+
+### Listado de autos (con marca)
+GET {{base}}/autos
+
+### Un auto
+GET {{base}}/autos/1
+
+### Marcas
+GET {{base}}/marcas
+
+### Agregar auto
+POST {{base}}/autos
+Content-Type: application/json
+
+{"id_marca": 5, "modelo": "Model 3", "anio": 2024, "precio": 42000, "estado": "Nuevo"}
+
+### Modificar auto
+PUT {{base}}/autos/1
+Content-Type: application/json
+
+{"id_marca": 1, "modelo": "Corolla", "anio": 2023, "precio": 26000, "estado": "Nuevo"}
+
+### Error: faltan campos (400)
+POST {{base}}/autos
+Content-Type: application/json
+
+{"modelo": ""}

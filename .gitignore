@@ -1,0 +1,9 @@
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+node_modules/
+vendor/
+# NOTA: los .env SI se suben (la consigna lo exige para poder levantar la app).
