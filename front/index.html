@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotora - Listado de autos</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body data-pagina="listado">
+    <div id="navbar"></div>
+    <main class="contenedor">
+        <div class="barra">
+            <h1>Listado de autos</h1>
+            <a class="btn" href="agregar.html">+ Agregar auto</a>
+        </div>
+        <div id="mensaje" class="mensaje"></div>
+        <div class="tarjeta">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marca</th><th>Modelo</th>
+                        <th class="ocultar-movil">Año</th>
+                        <th class="numero">Precio</th>
+                        <th class="ocultar-movil">Estado</th>
+                        <th>Venta</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-autos"><tr><td colspan="6" class="vacio">Cargando…</td></tr></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="dist/js/api.js"></script>
+    <script src="dist/js/util.js"></script>
+    <script src="dist/js/components/navbar.js"></script>
+    <script src="dist/js/pages/index.js"></script>
+</body>
+</html>
