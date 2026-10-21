@@ -1,8 +1,3 @@
--- ========================================================
--- BASE DE DATOS DE PRUEBA: SISTEMA DE GESTION DE AUTOMOTORA
--- (la dada en clase, sin cambios en tablas ni relaciones)
--- Se ejecuta solo la primera vez que arranca el contenedor db.
--- ========================================================
 SET NAMES utf8mb4;
 USE automotora;
 
@@ -18,7 +13,7 @@ CREATE TABLE VEHICULOS (
     modelo VARCHAR(50) NOT NULL,
     anio INT,
     precio DECIMAL(10, 2),
-    estado VARCHAR(20), -- 'Nuevo' o 'Usado'
+    estado VARCHAR(20),
     FOREIGN KEY (id_marca) REFERENCES MARCAS(id_marca)
 );
 

@@ -8,7 +8,7 @@ document.getElementById('form-auto').addEventListener('submit', async (e) => {
     const r = await API.request('/autos', 'POST', datos);
     if (r.status === 'ok') {
         sessionStorage.setItem('aviso', `${r.message} (ID ${r.id}).`);
-        location.href = 'index.html';             // el nuevo auto aparece en el listado
+        location.href = 'index.html';
     } else {
         Util.mensaje('error', r.message || 'No se pudo guardar el auto');
     }

@@ -50,8 +50,8 @@ document.getElementById('form-auto').addEventListener('submit', async (e) => {
 
     const r = await API.request('/autos/' + id, 'PUT', datos);
     if (r.status === 'ok') {
-        await cargarAuto();                       // refresca la info mostrada
-        Util.mensaje('ok', r.message);            // y confirma el cambio
+        await cargarAuto();
+        Util.mensaje('ok', r.message);
     } else {
         Util.mensaje('error', r.message || 'No se pudo guardar');
     }

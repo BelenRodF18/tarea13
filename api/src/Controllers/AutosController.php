@@ -15,8 +15,6 @@ class AutosController {
         echo json_encode($payload, JSON_UNESCAPED_UNICODE);
     }
 
-    // Valida y normaliza el body JSON (compartido por crear y actualizar).
-    // Devuelve [datos, null] o [null, mensaje de error].
     private function validar($modelo) {
         $d = json_decode(file_get_contents('php://input'), true);
         if (!is_array($d)) {
@@ -51,7 +49,6 @@ class AutosController {
         return [[$idMarca, $nombre, (int) $anio, (float) $precio, $estado], null];
     }
 
-    // GET /api/autos
     public function listar() {
         $autos = (new AutoModel($this->db))->listar();
         if ($autos === false) {
@@ -60,7 +57,6 @@ class AutosController {
         $this->responder(200, ['status' => 'ok', 'data' => $autos]);
     }
 
-    // GET /api/autos/:id
     public function ver($id) {
         $auto = (new AutoModel($this->db))->buscarPorId((int) $id);
         if (!$auto) {
@@ -69,7 +65,6 @@ class AutosController {
         $this->responder(200, ['status' => 'ok', 'data' => $auto]);
     }
 
-    // GET /api/marcas
     public function marcas() {
         $marcas = (new AutoModel($this->db))->marcas();
         if ($marcas === false) {
@@ -78,7 +73,6 @@ class AutosController {
         $this->responder(200, ['status' => 'ok', 'data' => $marcas]);
     }
 
-    // POST /api/autos
     public function crear() {
         $modelo = new AutoModel($this->db);
         [$datos, $error] = $this->validar($modelo);
@@ -93,7 +87,6 @@ class AutosController {
         $this->responder(201, ['status' => 'ok', 'message' => 'Auto agregado correctamente', 'id' => $nuevoId]);
     }
 
-    // PUT /api/autos/:id
     public function actualizar($id) {
         $modelo = new AutoModel($this->db);
         if (!$modelo->buscarPorId((int) $id)) {

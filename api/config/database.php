@@ -7,7 +7,6 @@ class Database {
     public $conn;
 
     public function __construct() {
-        // Leemos las variables cargadas desde el .env
         $this->host = getenv('DB_HOST') ?: 'localhost';
         $this->db_name = getenv('DB_NAME');
         $this->username = getenv('DB_USER');

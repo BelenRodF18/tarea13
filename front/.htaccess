@@ -3,7 +3,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Redirige cualquier petición no encontrada al index del HTML
 RewriteRule ^(.*)$ index.html [QSA,L]
 
 </IfModule>

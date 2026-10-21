@@ -1,6 +1,4 @@
-// Helpers compartidos por todas las paginas.
 const Util = {
-    // Evita inyeccion de HTML con datos que vienen de la BD / del usuario.
     esc(texto) {
         const d = document.createElement('div');
         d.textContent = texto ?? '';
@@ -15,7 +13,6 @@ const Util = {
         caja.textContent = texto;
         caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     },
-    // Carga las marcas existentes en un <select>.
     async cargarMarcas(select, seleccionada = '') {
         const r = await API.request('/marcas');
         if (r.status !== 'ok') {
@@ -26,7 +23,6 @@ const Util = {
             r.data.map(m => `<option value="${m.id_marca}">${Util.esc(m.nombre_marca)}</option>`).join('');
         select.value = String(seleccionada);
     },
-    // Lee y valida el formulario de auto. Devuelve el objeto o null (mostrando el error).
     leerFormulario() {
         const g = id => document.getElementById(id);
         const datos = {

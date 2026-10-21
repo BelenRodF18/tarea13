@@ -8,7 +8,6 @@ class AutoModel {
         $this->db = $db;
     }
 
-    // Listado: cada auto con su marca (JOIN) y si ya fue vendido.
     public function listar() {
         try {
             $stmt = $this->db->query(
@@ -25,7 +24,6 @@ class AutoModel {
         }
     }
 
-    // Un auto con toda su informacion (incluye datos de la marca y de la venta, si la hubo).
     public function buscarPorId($id) {
         try {
             $stmt = $this->db->prepare(
@@ -63,7 +61,6 @@ class AutoModel {
         return (bool) $stmt->fetchColumn();
     }
 
-    // Devuelve el id nuevo o false.
     public function crear($idMarca, $modelo, $anio, $precio, $estado) {
         try {
             $stmt = $this->db->prepare(

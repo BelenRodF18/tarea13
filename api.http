@@ -1,4 +1,3 @@
-# Tarea 13 - Gestion de autos (extension "REST Client" de VS Code)
 @base = http://localhost:8094/api
 
 ### Estado de la API

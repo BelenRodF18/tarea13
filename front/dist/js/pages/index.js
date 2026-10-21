@@ -22,13 +22,11 @@ async function cargarAutos() {
             <td><span class="etiqueta ${Number(a.vendido) ? 'vendido' : 'disponible'}">${Number(a.vendido) ? 'Vendido' : 'Disponible'}</span></td>
         </tr>`).join('');
 
-    // Click en cualquier parte de la fila -> pagina del auto
     cuerpo.querySelectorAll('tr.fila').forEach(fila => {
         fila.addEventListener('click', () => { location.href = 'auto.html?id=' + fila.dataset.id; });
     });
 }
 
-// Mensaje que deja agregar.html / auto.html al redirigir
 const aviso = sessionStorage.getItem('aviso');
 if (aviso) {
     sessionStorage.removeItem('aviso');

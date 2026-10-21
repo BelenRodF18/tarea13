@@ -1,4 +1,3 @@
-// Barra de navegacion reutilizable: se inyecta en <div id="navbar"></div>.
 (function () {
     const activa = document.body.dataset.pagina;
     const links = [
